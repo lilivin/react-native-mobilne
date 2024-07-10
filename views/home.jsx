@@ -1,11 +1,7 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, View, ScrollView, Image } from 'react-native';
-import useSWR from 'swr';
-import {HOST, fetcher } from "../helpers/api";
-import { Button, Card, Text, Avatar, IconButton } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
+import { Button, Card, Text } from 'react-native-paper';
 import ParallaxScrollView from '../components/ParallaxScrollView';
 export default function HomeScreen({navigation}) {
-    // const { data: films } = useSWR(`${HOST}/director/${directorId}/films`, fetcher);
 
   return (
     <ParallaxScrollView
@@ -18,6 +14,30 @@ export default function HomeScreen({navigation}) {
                 <Button 
                     onPress={() =>
                         navigation.navigate('Films')
+                    }
+                >Zobacz</Button>
+            </Card.Actions>
+        </Card>
+
+        <Card style={{marginTop: 50}}>
+            <Card.Cover source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/reactnative-bc00d.appspot.com/o/directors_rt_group_a_l.webp?alt=media&token=42e712c3-99e0-434f-bebe-4fda29b6f24a' }} />
+            <Card.Title title="Reżyserzy" subtitle="Zobacz filmy stworzone przez Twoim ulubionych reżyserów!" />
+            <Card.Actions>
+                <Button 
+                    onPress={() =>
+                        navigation.navigate('Directors')
+                    }
+                >Zobacz</Button>
+            </Card.Actions>
+        </Card>
+
+        <Card style={{marginTop: 50}}>
+            <Card.Cover source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/reactnative-bc00d.appspot.com/o/most-popular-Chinese-actors.jpg?alt=media&token=081c232a-23d7-43e4-af8c-b3bd4bb1ecc4' }} />
+            <Card.Title title="Aktorzy" subtitle="Zobacz aktorów występujących w filmach!" />
+            <Card.Actions>
+                <Button 
+                    onPress={() =>
+                        navigation.navigate('Actors')
                     }
                 >Zobacz</Button>
             </Card.Actions>
